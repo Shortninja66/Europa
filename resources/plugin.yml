@@ -1,0 +1,7 @@
+name: Europa
+version: 1.0.0
+description: Another scoreboard API.
+author: Shortninja
+website: http://shortninja.net
+main: net.shortninja.europa.Plugin
+softdepend: [PacketListenerApi]
