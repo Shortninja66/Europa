@@ -155,12 +155,12 @@ public class Entry
 		return this;
 	}
 	
-	/**
-	 * BigDecimal is used because its precision will work better for timers.
-	 * 
-	 * @param time The time to set as the current time.
-	 * @return Current Entry instance.
-	 */
+    /**
+    * BigDecimal is used because its precision will work better for timers.
+    * 
+    * @param time The time to set as the current time.
+    * @return Current Entry instance.
+    */
     public Entry setTime(BigDecimal time)
     {
         this.time = time;
@@ -168,13 +168,13 @@ public class Entry
         return this;
     }
     
-	/**
-	 * Interval is used to determine when an Entry's time will change from minutes
-	 * to seconds and etc.
-	 * 
-	 * @param interval The interval to set to.
-	 * @return Current Entry instance.
-	 */
+    /**
+    * Interval is used to determine when an Entry's time will change from minutes
+    * to seconds and etc.
+    * 
+    * @param interval The interval to set to.
+    * @return Current Entry instance.
+    */
     public Entry setInterval(int interval)
     {
     	this.interval = interval;
@@ -201,7 +201,7 @@ public class Entry
 	 */
 	public Entry send()
 	{
-		if(board.getEntries().size() < 15)
+		if(board.getEntries().size() <= 15)
 		{
 			setup();
 			isActive = true;
@@ -210,9 +210,9 @@ public class Entry
 		return this;
 	}
     
-    /**
-     * Sets up the entry by formatting the Bukkit Team text.
-     */
+    	/**
+     	* Sets up the entry by formatting the Bukkit Team text.
+     	*/
 	public void setup()
 	{
 		Scoreboard scoreboard = board.getScoreboard();
@@ -228,7 +228,7 @@ public class Entry
 		if(scoreboard.getTeam(teamName) != null)
 		{
 			team = scoreboard.getTeam(teamName);
-		}else team = scoreboard.registerNewTeam(teamName);
+		} else team = scoreboard.registerNewTeam(teamName);
 		
 		if(!team.getEntries().contains(key))
 		{
